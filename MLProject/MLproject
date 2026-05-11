@@ -1,7 +1,7 @@
 name: Diabetes_MLflow_Project
 
 docker_env:
-  image: dimasestascaptainkid/diabetes-mlflow:latest
+  image: dimasestascaptainkid/diabetes-mlflow:v1.4
 
 entry_points:
   main:
