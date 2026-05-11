@@ -17,10 +17,8 @@ def main(data_path: str):
         X, y, test_size=0.2, random_state=42, stratify=y
     )
     
-    # MLflow Tracking
-    mlflow.set_experiment("Workflow_CI_Advanced")
-    
-    with mlflow.start_run(run_name="MLProject_Run"):
+
+    with mlflow.start_run():  # ← HAPUS run_name="..."
         # Train model
         model = RandomForestClassifier(n_estimators=100, random_state=42)
         model.fit(X_train, y_train)
