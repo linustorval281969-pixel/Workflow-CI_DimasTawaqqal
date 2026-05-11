@@ -1,0 +1,11 @@
+name: Diabetes_MLflow_Project
+
+# Advanced: Gunakan Docker Environment
+docker_env:
+  image: dimasestascaptainkid/diabetes-mlflow:latest
+
+entry_points:
+  main:
+    parameters:
+      data_path: {type: str, default: "diabetes_preprocessing/diabetes_preprocessed.csv"}
+    command: "python modelling.py --data_path {data_path}"

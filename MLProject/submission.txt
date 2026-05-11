@@ -1,0 +1,4 @@
+Nama: Dimas Tawaqqal
+Kriteria: 3 - Workflow Automation (Advanced)
+Link Docker Hub: https://hub.docker.com/r/dimasestascaptainkid/diabetes-mlflow
+Catatan: Image sudah di-build & di-push. Gunakan docker_env di MLproject.

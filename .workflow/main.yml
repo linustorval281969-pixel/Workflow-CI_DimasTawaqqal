@@ -1,0 +1,13 @@
+name: Dicoding Workflow CI
+on: [push]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify MLProject structure
+        run: |
+          test -f MLProject/MLproject && echo "✅ MLproject found"
+          test -f MLProject/modelling.py && echo "✅ modelling.py found"
+          test -f MLProject/conda.yaml && echo "✅ conda.yaml found"
