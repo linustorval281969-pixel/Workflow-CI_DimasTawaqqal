@@ -17,8 +17,11 @@ def main(data_path: str):
         X, y, test_size=0.2, random_state=42, stratify=y
     )
     
-
-    with mlflow.start_run():  # ← HAPUS run_name="..."
+    # ✅ FIX: JANGAN pakai set_experiment() saat run via Docker/mlflow run
+    # Biarkan MLflow pakai default experiment agar tidak bentrok
+    
+    # ✅ FIX: JANGAN pakai run_name, biarkan MLflow handle otomatis
+    with mlflow.start_run():
         # Train model
         model = RandomForestClassifier(n_estimators=100, random_state=42)
         model.fit(X_train, y_train)
